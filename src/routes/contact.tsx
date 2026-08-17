@@ -45,8 +45,8 @@ function ContactPage() {
                 Our team is ready to assist with product enquiries, pricing, and bulk orders.
               </p>
               <div className="space-y-4">
-                <ContactItem icon={Phone} label="Phone" value="+234 000 000 0000" />
-                <ContactItem icon={Mail} label="Email" value="info@fortstar.com.ng" />
+                <ContactItem icon={Phone} label="Phone" value="+234 816 826 3873" />
+                <ContactItem icon={Mail} label="Email" value="info@fortstarenergy.com" />
                 <ContactItem icon={MapPin} label="Address" value="Nigeria" />
                 <ContactItem icon={Clock} label="Working Hours" value="Mon — Fri, 8:00 AM — 5:00 PM" />
               </div>
