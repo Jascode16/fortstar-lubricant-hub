@@ -64,11 +64,11 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="h-4 w-4 shrink-0 text-primary" />
-                <span>+234 000 000 0000</span>
+                <span>+234 816 826 3873</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="h-4 w-4 shrink-0 text-primary" />
-                <span>info@fortstar.com.ng</span>
+                <span>info@fortstarenergy.com</span>
               </li>
             </ul>
           </div>
