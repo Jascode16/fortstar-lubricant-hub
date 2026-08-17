@@ -47,7 +47,7 @@ function ContactPage() {
               <div className="space-y-4">
                 <ContactItem icon={Phone} label="Phone" value="+234 816 826 3873" />
                 <ContactItem icon={Mail} label="Email" value="info@fortstarenergy.com" />
-                <ContactItem icon={MapPin} label="Address" value="Nigeria" />
+                <ContactItem icon={MapPin} label="Address" value="6b Oseni street, anthony village, Lagos" />
                 <ContactItem icon={Clock} label="Working Hours" value="Mon — Fri, 8:00 AM — 5:00 PM" />
               </div>
             </div>
