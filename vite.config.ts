@@ -11,18 +11,17 @@ export default defineConfig({
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
     // nitro/vite builds from this
     server: { entry: "server" },
-    // TanStack Start's own crawler handles prerendering to static HTML — this is what actually
-    // produces .output/public/*.html for every route.
+    // Prerendering is OFF on purpose. TanStack Start's prerender crawler currently hits a known,
+    // still-open upstream bug with this Nitro/TanStack version combo (preview-server-plugin fails
+    // to resolve the built server module during the crawl step). Rather than chase a moving beta
+    // bug, we deploy as a real running Node server instead (HostAfrica cPanel Node.js Selector),
+    // which builds cleanly every time.
     prerender: {
-      enabled: true,
-      crawlLinks: true,
+      enabled: false,
     },
   },
-  // IMPORTANT: do NOT set preset: "static" here. The "static" preset triggers Nitro's own
-  // separate built-in prerenderer, which conflicts with TanStack Start's prerender crawler above
-  // (causes a 404 during the crawl, then a broken SSR build step afterward).
-  // "node-server" just gives the crawler a normal, real local server to hit — we only care about
-  // the resulting .output/public/ folder; the server output itself is not deployed anywhere.
+  // "node-server": a plain, standard Node HTTP server — this is what HostAfrica's cPanel
+  // "Setup Node.js App" (Passenger) runs.
   nitro: {
     preset: "node-server",
   },
