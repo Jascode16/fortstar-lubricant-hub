@@ -11,15 +11,19 @@ export default defineConfig({
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
     // nitro/vite builds from this
     server: { entry: "server" },
+    // TanStack Start's own crawler handles prerendering to static HTML — this is what actually
+    // produces .output/public/*.html for every route.
     prerender: {
       enabled: true,
       crawlLinks: true,
     },
   },
-  // Override the wrapper's default Cloudflare target — we're deploying to plain
-  // static hosting (HostAfrica cPanel via FTP), so every route should be crawled
-  // and rendered to static HTML at build time instead of bundled as a Cloudflare worker.
+  // IMPORTANT: do NOT set preset: "static" here. The "static" preset triggers Nitro's own
+  // separate built-in prerenderer, which conflicts with TanStack Start's prerender crawler above
+  // (causes a 404 during the crawl, then a broken SSR build step afterward).
+  // "node-server" just gives the crawler a normal, real local server to hit — we only care about
+  // the resulting .output/public/ folder; the server output itself is not deployed anywhere.
   nitro: {
-    preset: "static",
+    preset: "node-server",
   },
 });
