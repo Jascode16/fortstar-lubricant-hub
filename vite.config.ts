@@ -10,16 +10,16 @@ export default defineConfig({
   tanstackStart: {
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
     // nitro/vite builds from this
-    server: {
-      entry: "server",
-      // Build for plain static hosting (cPanel / HostAfrica) instead of the Cloudflare default.
-      // Every route gets crawled and rendered to static HTML at build time — no Node process
-      // needed to serve the site.
-      preset: "static",
-    },
+    server: { entry: "server" },
     prerender: {
       enabled: true,
       crawlLinks: true,
     },
+  },
+  // Override the wrapper's default Cloudflare target — we're deploying to plain
+  // static hosting (HostAfrica cPanel via FTP), so every route should be crawled
+  // and rendered to static HTML at build time instead of bundled as a Cloudflare worker.
+  nitro: {
+    preset: "static",
   },
 });
