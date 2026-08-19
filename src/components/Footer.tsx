@@ -11,7 +11,7 @@ export function Footer() {
         <div className="grid gap-10 md:grid-cols-3">
           <div className="space-y-4">
             <img
-              src={logoAsset.url}
+              src={logo}
               alt="Fort-Star Energy Resources Nigeria Limited"
               className="h-10 w-auto object-contain"
             />
