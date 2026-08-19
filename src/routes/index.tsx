@@ -49,7 +49,7 @@ function HomePage() {
             </div>
             <div className="relative flex items-center justify-center rounded-2xl bg-accent p-8 lg:p-12">
               <img
-                src={logoAsset.url}
+                src={logo}
                 alt="Fort-Star Energy Resources Nigeria Limited logo"
                 className="h-auto w-full max-w-md rounded-xl object-contain shadow-2xl"
               />
