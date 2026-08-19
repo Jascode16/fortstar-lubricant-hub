@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Phone, Mail, MapPin } from "lucide-react";
-import logoAsset from "@/assets/fortstar-logo.png.asset.json";
+import logo from "@/assets/fortstar-logo.png";
 
 export function Footer() {
   const year = new Date().getFullYear();
