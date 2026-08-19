@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logoAsset from "@/assets/fortstar-logo.png.asset.json";
+import logo from "@/assets/fortstar-logo.png";
 
 const navLinks = [
   { to: "/", label: "Home" },
